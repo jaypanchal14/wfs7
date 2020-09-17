@@ -1,0 +1,524 @@
+Code-14)
+package com.hsbc.pack;
+/*
+ * A program to perform basic four operations of calculator!!
+ * */
+public class Calculator {
+	
+	public void add(int num1,int num2){
+		System.out.println("Addition: "+(num1+num2));
+	}
+	public void sub(int num1,int num2){
+		System.out.println("Subtraction: "+(num1-num2));
+	}
+	public void mul(int num1,int num2){
+		System.out.println("Multiplication: "+(num1*num2));
+}
+	public void div(int num1,int num2){
+		System.out.println("Division: "+(num1/num2));
+}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// Creating object of calculator
+		Calculator cal = new Calculator();
+		cal.add(10,2);
+		cal.sub(10,2);
+		cal.mul(10,2);
+		cal.div(10,2);
+	}
+
+}
+
+
+Code-15)
+package com.hsbc.pack;
+/**
+ * 	Program to use static counter to count number of object which are instantiated.
+ */
+public class Counter {
+	
+	public static int count;
+	// Default Constructor
+	Counter()
+	{	//incrementing each time object is instantiated.
+		count++;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Counter c1 =new Counter();
+		Counter c2 =new Counter();
+		Counter c3 =new Counter();
+		Counter c4 =new Counter();
+		// Printing number of objects
+		System.out.println("Total number of Objects: "+c4.count);
+	}
+
+}
+
+
+Code-16)
+
+
+Code-17)
+
+
+Code-18)
+package com.hsbc.pack;
+/*
+ * A program to demonstrate difference betweeen equals and '==' operator.
+ * */
+public class TestString {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s1 = new String("Hello");
+		String s2 = new String("Hello");
+		// will return true
+		System.out.println(s1.equals(s2));
+		// will return false
+		System.out.println(s1==s2);
+	}
+}
+
+
+Code-19)
+package com.hsbc.pack;
+/*
+ *  A program to copy array.
+ * */
+public class TestArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int arr1[] = {1,2,3,4,5,6,7,8};
+		// creating array of same size
+		int arr2[] = new int[arr1.length];
+		
+		for(int i=0;i<arr1.length;i++)
+		{	// making copy of elements
+			arr2[i] = arr1[i];
+		}
+		System.out.println("Content of first array: ");
+		for(int i=0;i<arr1.length;i++)
+		{	//  Printing elements of first array
+			System.out.println(arr1[i]);
+		}
+		System.out.println("Content of second array: ");
+		for(int i=0;i<arr1.length;i++)
+		{	// Printing elements of second array
+			System.out.println(arr2[i]);
+		}
+	}
+}
+
+
+Code-20)
+package com.hsbc.pack;
+/**
+ *  Program to find sum and average of an array.
+ */
+public class Average {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// declaring an array
+		double[] arr = {10,20,30,40,50};
+		double sum = 0;
+		for(int i=0;i<arr.length;i++)
+		{	// finding sum
+			sum = sum + arr[i];
+		}
+		System.out.println("Average of array: "+(sum/arr.length));
+		System.out.println("Sum of array: "+sum);
+	}
+}
+
+
+Code-21)
+package com.hsbc.pack;
+/**
+ *  Program to add two matrix.
+ */
+import java.util.Scanner;
+
+public class ArraySum {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 int row, col, i, j;
+		 Scanner in = new Scanner(System.in);
+		 System.out.println("Enter Rows and Column: ");
+		 row = in.nextInt();
+		 col = in.nextInt();
+		 int first[][] = new int[row][col];       //creating matrix
+		 int second[][] = new int[row][col];
+		 int sum[][] = new int[row][col];
+		 System.out.println("Values of First matrix");     //input of matrix
+		 for (i = 0; i < row; i++)
+			 for (j = 0; j < col; j++)
+				 first[i][j] = in.nextInt();
+		 System.out.println("Values of Second matrix");
+		 for (i = 0 ; i < row; i++)
+			 for (j = 0 ; j < col; j++)
+				 second[i][j] = in.nextInt();
+		 for (i = 0; i < row; i++)
+			 for (j = 0; j < col; j++)
+				 sum[i][j] = first[i][j] + second[i][j];
+		 System.out.println("Sum of the matrices:");
+		 for (i = 0; i < row; i++)
+		 {
+			 for (j = 0; j < col; j++)
+				 System.out.print(sum[i][j] + "\t");
+			 System.out.println();
+	}
+	}
+}
+
+
+Code-22)
+package com.hsbc.pack;
+import java.util.Scanner;
+/*
+*  Program to find the square of each elements of the matrix.
+*/
+public class MatrixSquare {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 int row, col, i, j;
+		 Scanner s = new Scanner(System.in);
+		 System.out.println("Value of Rows and Columns of Matrix");
+		 row = s.nextInt();
+		 col = s.nextInt();
+		 // Matrix creation
+		 int first[][] = new int[row][col];       
+		 int square[][] = new int[row][col];
+		 System.out.println("Elements of first Matrix");     
+		 for (i = 0; i < row; i++)
+			 for (j = 0; j < col; j++)
+				 first[i][j] = s.nextInt();
+
+		 for (i = 0; i < row; i++)
+		 {
+			 for (j = 0; j < col; j++)
+			 {  square[i][j] = first[i][j] * first[i][j]; }
+		 }
+		 System.out.println("Square of the matrices:");
+		 for (i = 0; i < row; i++)
+		 {
+			 for (j = 0; j < col; j++)
+				 System.out.print(square[i][j] + "    ");
+			 System.out.println("");
+		 }
+	}
+}
+
+
+Code-23)
+package com.hsbc.pack;
+import java.util.Scanner;
+/*
+ *  A program to count occurrence of each element of array. 
+ * */
+public class CountElement {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int[] arr = new int[10];
+		int[] frequency = new int[10];
+		int size, i, j, count;
+		System.out.println("Enter Size of Array upto 10: ");
+		size = sc.nextInt();                      
+		System.out.println("Enter values of matrix");
+		for(i=0; i<size; i++)
+		{	arr[i] = sc.nextInt();
+			frequency[i] = -1;
+		}
+		for(i=0; i<size; i++)
+		{
+		count = 1;
+		for(j=i+1; j<size; j++)
+		{  //finding duplicate element
+		if(arr[i]==arr[j])     
+			{		count++;
+				frequency[j] = 0; 
+			}
+		}
+		if(frequency[i] != 0)
+		{		frequency[i] = count;  }
+		}	
+		System.out.println("Frequency of all elements : ");
+		for(i=0; i<size; i++)
+		{		if(frequency[i] != 0)
+		{		System.out.println(arr[i] +" occurs for "+frequency[i]+" times!!!");  }
+		}
+}
+}
+
+
+Code-24)
+package com.hsbc.pack;
+/*
+ *  Program to give example of we can do method!!
+ * */
+public class OverLoad {
+	public void area(int height)
+	{
+		int area=height*height;
+		System.out.println("area of square:"+area);
+	}
+	public void area(int height,int length)
+	{
+		int area=length*height;
+		System.out.println("area of rectangle:"+area);
+	}
+	public void perimeter(int height)
+	{
+		int perimeter=4*height;
+		System.out.println("perimeter of square:"+perimeter);
+	}
+	public void perimeter(int height,int length)
+	{
+		int perimeter=2*(length+height);
+		System.out.println("area of rectangle:"+perimeter);
+	}
+	public static void main(String args[])
+	{	
+		OverLoad obj = new OverLoad();
+		int a=5,b=10;
+		obj.area(a);
+		obj.area(a,b);
+		obj.perimeter(a);
+		obj.perimeter(a,b);
+		}
+}
+
+
+Code-25)
+package com.hsbc.pack;
+/*
+ *  Constuctor Overloading.
+ * */
+public class EmpData {
+	   private String empName;
+	   private int empId;
+	   private int  empAge;
+	   private String empdesgn;
+	   private String empLocation;
+	   private int empExpInYrs;
+	   EmpData()
+	   {
+	       // Default constructor
+	       this.empName="JP";
+	       empId=1;
+	       empAge=22;
+	       empdesgn="Trainee software engineer";
+	       empLocation="Pune";
+	       empExpInYrs=1;
+	   }
+	   EmpData(String empName)
+	   {
+	       // First parameterized constructor
+	       this.empName=empName;
+	       empId=1;
+	       empAge=22;
+	       empdesgn="Trainee software engineer";
+	       empLocation="Pune";
+	       empExpInYrs=1;
+	   }
+	   EmpData(String empName, int empId)
+	   {
+	       // Second parameterized constructor
+	       this.empName=empName;
+	       this.empId=empId;
+	       empAge=22;
+	       empdesgn="Trainee software engineer";
+	       empLocation="Pune";
+	       empExpInYrs=1;
+	   }
+	  EmpData(String empName, int empId, int empAge)
+	   { 	// Third parameterized constructor 
+  	       this.empName=empName;
+	       this.empId=empId;
+	       this.empAge=empAge;
+	       empdesgn="Trainee software engineer";
+	       empLocation="Pune";
+	       empExpInYrs=1;
+	   }
+	   EmpData(String empName,int empId, int empAge, String empdesgn)
+	   {	// Fourth parameterized constructor
+    	   this.empName=empName;
+	       this.empId=empId;
+	       this.empAge=empAge;
+	       this.empdesgn=empdesgn;
+	       empLocation="Pune";
+	       empExpInYrs=1;
+	   }
+	   EmpData(String empName,int empId, int empAge, String empdesgn, String empLocation)
+	   {	// Fifth parameterized constructor 
+           this.empName=empName;
+	       this.empId=empId;
+	       this.empAge=empAge;
+	       this.empdesgn=empdesgn;
+	       this.empLocation=empLocation;
+	       empExpInYrs=1;
+	   }
+	   EmpData(String empName,int empId, int empAge, String empdesgn, String empLocation, int empExpInyrs)
+	   {
+	       //Last parameterized constructor
+	       this.empName=empName;
+	       this.empId=empId;
+	       this.empAge=empAge;
+	       this.empdesgn=empdesgn;
+	       this.empLocation=empLocation;
+	       this.empExpInYrs= empExpInyrs;
+	   }
+	   public static void main(String args[])
+	   {
+	       //  Calling the default constructor
+	       EmpData obj = new EmpData();
+	       EmpData obj1 =new EmpData("JP");
+	       EmpData obj2 = new EmpData("JP",1);
+	       EmpData obj3 = new EmpData("JP",1,10);
+	       EmpData obj4 = new EmpData("JP",1,10,"TSE");
+	       EmpData obj5 = new EmpData("JP",1,10,"TSE","Pune");
+	       EmpData obj6 = new EmpData("JP",1,10,"TSE","Pune",0);
+}
+}
+
+
+Code-26)
+package com.hsbc.pack;
+/*
+*  A program to overload to methods of calculator for int and double data types.
+*/
+class Calculator {
+		public void add(int a, int b) {
+		   System.out.println("The sum of a and b is " + (a+b));
+		}
+		public void add(double a, double b) {
+			   System.out.println("The sum of c and d is " + (a+b));
+		}
+		public void add(double a, int b) {
+			   System.out.println("The sum of c and a is " + (a+(double)b));
+		}
+		public void add(int a, double b) {
+			   System.out.println("The sum of b and d is " + (b+(double)a));
+		}
+	    public void diff(int a, int b) {
+	    	System.out.println("The difference of a and b is " + (a-b));
+		}
+	    public void diff(double a, double b) {
+	    	System.out.println("The difference of c and d is " + (a-b));
+		}
+	    public void diff(double a, int b) {
+			   System.out.println("The difference of c and a is " + (a-(double)b));
+		}
+	    public void diff(int a, double b) {
+			   System.out.println("The difference of b and d is " + ((double)a-b));
+		}
+	    public void mul(int a, int b) {
+	    	System.out.println("The product of a and b is " + (a*b));
+		}
+	    public void mul(double a, double b) {
+	    	System.out.println("The product of c and d is " + (a*b));
+		}
+	    public void mul(double a, int b) {
+			   System.out.println("The product of c and a is " + (a*(double)b));
+		}	    
+	    public void mul(int a, double b) {
+			   System.out.println("The product of b and d is " + ((double)a*b));
+		}	    
+	    public void div(int a, int b) {
+		   try {
+		     float c = (float)a/b;
+		     System.out.println("The division of a and b is " + c); 
+		   }
+		   catch(ArithmeticException e)
+		   {
+		      System.out.println("Message: " + e);
+		   }
+	    }	    
+	    public void div(double a, double b) {
+			   try {
+			     double c = a/b;
+			     System.out.println("The division of c and d is " + c); 
+			   }
+			   catch(ArithmeticException e)
+			   {
+			      System.out.println("Message: " + e);
+			   }
+		}	    
+	    public void div(int a, double b) {
+			   try {
+			     double c = (double)a/b;
+			     System.out.println("The division of b and d is " + c); 
+			   }
+			   catch(ArithmeticException e)
+			   {
+			      System.out.println("Message: " + e);
+			   }
+		    }	    
+	    public void div(double a, int b) {
+			   try {
+			     double c = a/(double)b;
+			     System.out.println("The division of c and a is " + c); 
+			   }
+			   catch(ArithmeticException e)
+			   {
+			      System.out.println("Message: " + e);
+			   }
+		    }
+}
+public class OverLoadCalC {
+	public static void main(String[] args) {
+		int a = 4;
+		int b = 8;
+		double c = 34.567;
+		double d = 56.234;
+		Calculator cal = new Calculator();
+		cal.add(a, b);
+		cal.add(c, d);
+		cal.add(c, a);
+		cal.add(b, d);
+		cal.diff(a, b);
+		cal.diff(c, d);
+		cal.diff(c, a);
+		cal.diff(b, d);
+		cal.mul(a, b);
+		cal.mul(c, d);
+		cal.mul(c, a);
+		cal.mul(b, d);
+		cal.div(a, b);
+		cal.div(c, d);
+		cal.div(c, a);
+		cal.div(b, d);
+	}
+}
+
+
+Code-27)
+package com.hsbc.pack;
+/*
+ *  A program to explain Initializer in java.
+ * */
+public class Computer {
+	
+	{
+		System.out.println("Initializer Example");
+		System.out.println("Running before each time class is loaded.");
+	}
+	public int a;
+	Computer(){
+		this.a = 10;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Computer obj = new Computer();
+		System.out.println(obj.a);
+	}
+}
+
+
+Code-28)

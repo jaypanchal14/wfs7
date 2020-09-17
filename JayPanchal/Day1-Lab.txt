@@ -1,0 +1,280 @@
+CODE:1)
+package com.hsbc.pack;
+/*
+Simple program to display a string
+*/
+class Welcome
+{	public static void main(String args[])
+	{	
+		System.out.println("Welcome to the world of the Java");
+	}
+}
+
+
+CODE:2)
+package com.hsbc.pack;
+/*
+A program to print command-line argument	
+*/
+class Exer2
+{
+	public static void main(String args[])
+	{	// accessing argument from args array
+		System.out.println("Message:"+args[0]);
+	}
+}
+
+CODE:3)
+package com.hsbc.pack;
+/*
+different types of comments	
+*/
+class Exer3
+{	public static void main(String args[])
+	{	//SINGLE LINE COMMENTS
+		System.out.println("Single-line comment");
+	/*	Comment-line-1
+		Comments-line-2  */
+		System.out.println("Multi-line comment");
+	/**
+		Documentation-comment 
+	*/	System.out.println("For documentation comment");
+	}
+}
+
+
+CODE:4)
+package com.hsbc.pack;
+/*
+To show different types of data types used in java
+*/
+class Exer4
+{	public static void main(String args[])
+	{
+		int intVar = 1;
+		float floatVar = 10.01f;
+		double douVar = 500.005;
+		static final double VALUE = 200.02
+		char charVar = "a";
+		System.out.println("integer :"+intVar);	
+		System.out.println("float :"+floatVar);
+		System.out.println("double :"+douVar);
+		System.out.println("Constant double :"+VALUE);
+		System.out.println("char :"+charVar);
+	}
+}
+
+
+CODE:5)
+package com.hsbc.pack;
+/*
+A program to swap two integers.
+*/
+class Exer5
+{	public static void main(String args[])
+	{   	// Only for integers
+		// we should pass integers in command-line argumenst
+		int var1 = args[0];
+		int var2 = args[1];
+		int temp = var1;
+		var1 = var2;
+		var2 = temp;
+		var1 = args[0];
+		System.out.println("Var2:"+var2);	
+	}
+}
+
+
+CODE:6)
+package com.hsbc.pack;
+/*
+	To chech if passed year through command-line
+	is leap year or not.
+*/
+class Exer6
+{	public static void main(String args[])
+	{	int year = Integer.parseInt(args[0]);
+		if(year%400==0 || (year%4==0 && year%100!=0))
+			System.out.println("Given year:"+year+" is Leap year.");
+		else
+			System.out.println("Given year"+year+" is not a Leap year.");
+	}
+}
+
+
+CODE:7)
+package com.hsbc.pack;
+/*
+	To find the biggest number from giver three numbers.
+*/
+class Exer7
+{	public static void main(String args[])
+	{	int var1 = Integer.parseInt(args[0]);
+		int var2 = Integer.parseInt(args[1]);
+		int var3 = Integer.parseInt(args[2]);
+		if (var1>=var2 && var1>=var3){
+			System.out.println("Largest number:"+var1);
+		}
+		if (var2>=var1 && var2>=var3){
+			System.out.println("Largest number:"+var2);
+		}
+		if (var3>=var2 && var3>=var1){
+			System.out.println("Largest number:"+var3);
+		}
+	}
+}
+
+
+CODE:8)
+package com.hsbc.pack;
+/*
+	To check if given number is  palindrome or not.
+*/
+class Exer8
+{	public static void main(String args[])
+	{	int palVar = Integer.parseInt(args[0]);
+		int temp = 0;
+		for(int i=palVar;i>0;i=i/10)
+		{	temp = temp*10+i%10;
+		}
+		if(palVar==temp)
+		{	System.out.println("Given number"+palVar+" is Palindrome.");
+		}
+		else
+		{	System.out.println("Given number"+palVar+" is not Palindrome.");
+		}		
+	}
+}
+
+
+CODE:9)
+package com.hsbc.pack;
+/*
+	To print fibonacci series upto 200 value..
+*/
+class Exer9
+{	public static void main(String args[])
+	{	// t1 and t2 are the first two terms
+		int last=200, t1=0, t2=1;
+		System.out.println("Fibonacci series from 0 to 200");
+		while(t1<=last)
+		{	System.out.println(t1+",");
+			int sum = t1+t2;
+			t1 = t2;
+			t2 = sum;
+		}			
+	}
+}
+
+
+CODE:10)
+package com.hsbc.pack;
+import java.util.Arrays;
+/*
+Program to reverse each word of set and then sort it. 
+*/
+class Exer10
+{	public static void main(String args[])
+	{	String arr[] = new String[]{"apple","banana","sheet","dog","cat"};
+		for(int i=0;i<arr.length;i++)
+		{	StringBuilder build = new StringBuilder(arr[i]);
+			arr[i] = build.reverse().toString();
+		}
+	// Sorting the array with built-in method	
+		Arrays.sort(arr);
+		for(String s:arr)
+		{	System.out.println(s+" ");
+		}
+	}
+}
+
+
+CODE:11)
+package com.hsbc.pack;
+/*
+	Implementation of selection sort
+	logic:
+	finding smallest numbers and swapping with respective index. 
+*/
+class Exer11
+{	public static void main(String args[])
+	{	
+		int[] arr = {2,6,9,3,4};
+		System.out.println("Before selection sort");
+		for(int i:arr)
+		{	System.out.println(i+"");
+		}
+		for(int i=0;;i<arr.length-1;i++)
+		{	int index = i;
+			for(int j=i+1;j<arr.length;j++)
+			{	if(arr[j]<arr[index])
+				{  index = j;     }
+			}
+			// Swapping between i and smallestNumber
+			int smallNum = arr[index];
+			arr[index] = arr[i];
+			arr[i] = smallNum;
+		}
+		System.out.println("After selection sort");
+		for(int i:arr)
+		{	System.out.println(i+"");
+		}
+	}
+}
+
+
+CODE:12)
+package com.hsbc.pack;
+/*
+	To find the total sum of cost after passing which product
+	we are goint to buy and how much.	
+*/
+class Exer12
+{	public static void main(String args[])
+	{	
+		float PRODUCT1 = 22.50f;
+		float PRODUCT2 = 44.50f;
+		float PRODUCT3 = 9.98f;
+		int product = Integer.parseInt(args[0]);
+		int quantity = Integer.parseInt(args[1]);
+		float price;
+		switch(product)
+		{	case 1:
+			price = PRODUCT1;
+			break;
+			case 2:
+			price = PRODUCT2;
+			break;
+			case 3:
+			price = PRODUCT3;
+			break;
+			default:
+			price = 5
+			System.out.println("Invalid product-number");
+			break;
+		}
+		if(price>0 && price<4)
+		{float sum = price*quantity;
+		System.out.println("Total value:"+sum);	}
+	}
+}
+
+
+CODE:13)
+package com.hsbc.pack;
+/*
+	To find the number of gross,dozen, anf remaining
+	number of eggs.
+*/
+class Exer13
+{	public static void main(String args[])
+	{	
+		int eggs = Integer.parseInt(args[0]);
+		int gross = eggs/144;
+		eggs = eggs%144;
+		int dozens = eggs/12;
+		eggs = eggs%12;
+		int left = eggs;
+		System.out.println("Your number of eggs is"+gross+"gross,"+dozens+"dozen,and"+left);
+	}
+}
