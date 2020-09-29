@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User-Interface</title>
+</head>
+<body>
+    <form action="./CallerServlet" method="POST">
+        <table>
+            <tr>
+                <td>Product-ID</td>
+                <td><input type="text" name="productID"></td>
+            </tr>
+            <tr>
+                <td>Product-Name</td>
+                <td><input type="text" name="productName"></td>
+            </tr>
+            <tr>
+                <td>Category</td>
+                <td><input type="text" name="category"></td>
+            </tr>
+            <tr>
+                <td>Price</td>
+                <td><input type="text" name="price"></td>
+            </tr>
+            <tr>
+                <td>Quantity</td>
+                <td><input type="text" name="quantity"></td>
+            </tr>
+            <tr>
+                <td>Re-Order Level</td>
+                <td><input type="text" name="rol"></td>
+            </tr>
+            <tr>
+                <td><button type="submit">Enter</button></td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+    <form action="./CallerServlet" method="GET">
+        <table>
+            <tr>
+                <td><button type="submit">Display</button></td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+    <form action="./CallerServlet" method="put">
+        <table>
+            <tr>
+                <td>Product-ID</td>
+                <td><input type="text" name="productID"></td>
+            </tr>
+            <tr>
+                <td><button type="submit">Update</button></td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+    <form action="./CallerServlet" method="delete">
+        <table>
+            <tr>
+                <td>Product-ID</td>
+                <td><input type="text" name="productID"></td>
+            </tr>
+            <tr>
+                <td><button type="submit">Delete</button></td>
+                <td></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
